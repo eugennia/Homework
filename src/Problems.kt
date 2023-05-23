@@ -32,7 +32,22 @@ fun main() {
     println(" - result of 159 problem")
 
     print(problem160())
+    println(" - result of 161 problem")
+
+    print(problem161())
     println(" - result of 160 problem")
+
+    print(problem162())
+    println(" - result of 162 problem")
+
+    print(problem163())
+    println(" - result of 163 problem")
+
+    print(problem164(inputNumber))
+    println(" - result of 164 problem")
+
+    print(problem165(inputNumber))
+    println(" - result of 165 problem")
 
 }
 
@@ -87,6 +102,7 @@ fun problem155(): Int {
     return sum
 }
 
+// TODO: fix 15 30 45 60 75 90 -388684592 - result of 156 problem
 fun problem156(): Int {
     var product: Int = 1
     for (i in 1..99) {
@@ -109,6 +125,7 @@ fun problem157(): Int {
     return sum
 }
 
+// TODO: fix -636245659 - result of 158 problem
 fun problem158(): Int {
     var product: Int = 1
     for (i in 1 .. 999) {
@@ -119,6 +136,7 @@ fun problem158(): Int {
     return product
 }
 
+// TODO: fix 0 - result of 159 problem
 fun problem159(): Int {
     var product: Int = 1
     for (i in 1..999) {
@@ -132,10 +150,61 @@ fun problem159(): Int {
 
 fun problem160(): Int {
     for (i in 100..999) {
-        for (j in 1600 .. 15984)
-        if (i * 16 == sqrt(j.toDouble()).toInt()) {
+        for (j in 40 .. 127)
+            if (i * 16 == j * j) {
+                return i
+            }
+    }
+    return 0
+}
+
+fun problem161(): Int {
+    for (i in 1000..9999) {
+        for (j in 161 .. 2600)
+            if (i * 26 == j * j) {
+                return i
+            }
+    }
+    return 0
+}
+
+fun problem162(): Int {
+    for (i in 9999 downTo 1000) {
+        for (j in 1400 downTo  442)
+            if (i * 14 == j * j) {
+                return i
+            }
+    }
+    return 0
+}
+
+fun problem163(): Int {
+    for (i in 9999 downTo 1000) {
+        for (j in 1800 downTo  570)
+            if (i * 18 == j * j) {
+                return i
+            }
+    }
+    return 0
+}
+
+fun problem164(n: Int): Int {
+    for (i in 100..999) {
+        if (sqrt(i.toDouble()) > n) {
             return i
         }
     }
     return 0
+}
+
+fun problem165(n: Int): Boolean { // same as 180
+    var number = n
+    while (number % 3 == 0) {
+        number /= 3
+    }
+    return number == 1
+}
+
+fun problem166(n: Int): Boolean {
+    return false
 }
