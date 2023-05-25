@@ -57,10 +57,10 @@ fun main() {
 //    print(problem167(inputNumber))
 //    println(" - result of 167 problem")
 
-//    print(problem168(inputNumber))
+//    print(isPrimeNumber(inputNumber))
 //    println(" - result of 168 problem")
 
-//    print(problem169(inputNumber, 5))
+//    print(isSumPrimeNumber(inputNumber, 5))
 //    println(" - result of 169 problem")
 
 //    print(problem170(inputNumber))
@@ -78,11 +78,23 @@ fun main() {
 //    print(problem174(inputNumber))
 //    println(" - result of 174 problem")
 
+//    print(problem175(inputNumber))
+//    println(" - result of 175 problem")
+
+//    print(fib(inputNumber))
+//    println(" - result of 176 problem")
+
+//    print(problem177(inputNumber))
+//    println(" - result of 177 problem")
+
+    print(problem178(inputNumber))
+    println(" - result of 178 problem")
+
 //    print(problem179(inputNumber, 5))
 //    println(" - result of 179 problem")
 
-    print(problem180(inputNumber))
-    println(" - result of 180 problem")
+//    print(problem180(inputNumber))
+//    println(" - result of 180 problem")
 }
 
 fun problem151(number: Int): Int {
@@ -268,7 +280,8 @@ fun problem167(x: Int): Boolean =
         sin(x.toFloat().pow(it)) < 0
     }
 
-fun problem168(n: Int): Boolean {
+// problem168
+fun isPrimeNumber(n: Int): Boolean {
     if (n <= 1) return false
     for (i in 2 until n) {
         for (j in 2 until n) {
@@ -280,7 +293,8 @@ fun problem168(n: Int): Boolean {
     return false
 }
 
-fun problem169(a: Int, b: Int): Int {
+// problem169
+fun isSumPrimeNumber(a: Int, b: Int): Int {
     if (a <= 0 || b <= 0) return 6
     for (i in 2 until a + b) {
         for (j in 2 until a + b) {
@@ -337,15 +351,66 @@ fun problem173(n: Int, a: Float, b: Float): Float {
     return h
 }
 
-// TODO fix later
-//fun problem174(n: Int): Int {
-//    var list = mutableListOf<Int>()
-//    list.add(2)
-//    for (i in n downTo 1) {
-//        list.add(2 + 1 / problem174(n - 1))
-//    }
-//    return list.last()
-//}
+fun problem174(n: Int) {
+    var N = n
+    var x = 2f
+    while (N > 0) {
+        x = 2 + 1 / x
+        N--
+        print("$x ")
+    }
+}
+
+// TODO ask, what's wrong?
+fun problem175(n: Int) {
+    var N = n
+    var x = 1f
+    for (i in 1 .. N) {
+        x = (x + 1) / N
+        N--
+        print("$x ")
+    }
+}
+
+// problem176
+fun fib(x: Int): Int {
+    if (x <= 1) return 1
+    return fib(x - 2) + fib(x - 1)
+}
+
+// TODO ask
+fun problem177(n: Int) {
+    if (n == 1) print("1")
+    if (n == 2) print("2")
+    var x1 = 1f
+    var x2 = 2f
+    var xN = 0f
+    for (i in 3 .. n) {
+        xN = (x1 + 2 * x2) / 3
+        x1 = x2
+        x2 = xN
+    }
+    print("$xN ")
+
+}
+
+// TODO ask
+fun problem178(n: Int) {
+    if (n == 1) print("1")
+    if (n == 2) print("2")
+    if (n == 3) print("3")
+    var x1 = 1f
+    var x2 = 2f
+    var x3 = 3f
+    var xN = 0f
+    for (i in 3 .. n) {
+        xN = (x3 + x2 - 2 * x1)
+        x1 = x2
+        x2 = x3
+        x3 = xN
+        print("$xN ")
+    }
+}
 
 fun problem179(n: Int, k: Int): String {
     var N = n
@@ -381,19 +446,14 @@ fun problem185(p: Int) {
 
     println("Total $x AMD in $m months")
 
+}
 //    """
 //        Total $x AMD
 //        in $m months
 //    """
-}
 
 //fun problem188(x: Int): Int {
 //
 //}
-
-fun fib(x: Int): Int {
-    if (x <= 1) return 1
-    return fib(x - 2) + fib(x - 1)
-}
 
 
