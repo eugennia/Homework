@@ -87,14 +87,44 @@ fun main() {
 //    print(problem177(inputNumber))
 //    println(" - result of 177 problem")
 
-    print(problem178(inputNumber))
-    println(" - result of 178 problem")
+//    print(problem178(inputNumber))
+//    println(" - result of 178 problem")
 
 //    print(problem179(inputNumber, 5))
 //    println(" - result of 179 problem")
 
 //    print(problem180(inputNumber))
 //    println(" - result of 180 problem")
+
+//    print(problem201(inputNumber))
+//    println(" - result of 201 problem")
+
+//    print(problem202(inputNumber))
+//    println(" - result of 202 problem")
+
+//    print(problem203(inputNumber))
+//    println(" - result of 203 problem")
+//
+//    print(problem204(inputNumber))
+//    println(" - result of 204 problem")
+//
+    print(problem205(inputNumber))
+    println(" - result of 205 problem")
+
+//    print(problem206(inputNumber))
+//    println(" - result of 206 problem")
+//
+//    print(problem207(inputNumber))
+//    println(" - result of 207 problem")
+//
+//    print(problem208(inputNumber))
+//    println(" - result of 208 problem")
+//
+//    print(problem209(inputNumber))
+//    println(" - result of 209 problem")
+//
+//    print(problem210(inputNumber))
+//    println(" - result of 210 problem")
 }
 
 fun problem151(number: Int): Int {
@@ -365,7 +395,7 @@ fun problem174(n: Int) {
 fun problem175(n: Int) {
     var N = n
     var x = 1f
-    for (i in 1 .. N) {
+    for (i in 1..N) {
         x = (x + 1) / N
         N--
         print("$x ")
@@ -385,7 +415,7 @@ fun problem177(n: Int) {
     var x1 = 1f
     var x2 = 2f
     var xN = 0f
-    for (i in 3 .. n) {
+    for (i in 3..n) {
         xN = (x1 + 2 * x2) / 3
         x1 = x2
         x2 = xN
@@ -403,7 +433,7 @@ fun problem178(n: Int) {
     var x2 = 2f
     var x3 = 3f
     var xN = 0f
-    for (i in 3 .. n) {
+    for (i in 3..n) {
         xN = (x3 + x2 - 2 * x1)
         x1 = x2
         x2 = x3
@@ -455,5 +485,53 @@ fun problem185(p: Int) {
 //fun problem188(x: Int): Int {
 //
 //}
+
+fun problem201(n: Int): Int {
+    if (n < 0) return -1
+    var count = 1
+    var N = n
+    while (N / 10 > 1) {
+        N /= 10
+        count++
+    }
+    return count
+}
+
+fun problem202(n: Int): Int {
+    if (n < 0) return -1
+    var sum = 0
+    var N = n
+    while (N.toFloat() / 10 > 0f) {
+        sum += N % 10
+        N /= 10
+    }
+    return sum
+}
+
+fun problem203(n: Int): Int {
+    if (n < 0) return -1
+    var product = 1
+    var N = n
+    while (N.toFloat() / 10 > 0f) {
+        if (N.toFloat() % 10 != 0f) {
+            product *= N % 10
+        }
+        N /= 10
+    }
+    return product
+}
+
+fun problem204(n: Int) {
+    if (n < 0) return
+    var N = n
+    while (N > 0) {
+        print("${N % 10} ")
+        N /= 10
+    }
+}
+
+fun problem205(n: Int) {
+
+}
 
 
