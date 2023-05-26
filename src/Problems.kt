@@ -531,7 +531,14 @@ fun problem204(n: Int) {
 }
 
 fun problem205(n: Int) {
-
+    if (n < 0) return
+    var N = n
+    var mutableList: MutableList<Int> = mutableListOf<Int>()
+    while (N > 0) {
+        mutableList.add(N % 10)
+        N /= 10
+    }
+    print(mutableList.reversed())
 }
 
 
