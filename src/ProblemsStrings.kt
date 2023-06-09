@@ -1,6 +1,6 @@
 fun main() {
-    val word1 = getRandomString(10)
-    val word2 = getRandomString(10)
+    val word1 = "miosfehfioe"
+    val word2 = "mmaaaaaaaaaaaa"
 //    println(word)
 
 //    println(problem646("adddaa"))
@@ -20,7 +20,7 @@ fun main() {
 }
 
 fun getRandomString(length: Int): String {
-    val allowedChars = ('A'..'Z') + ('a'..'z')
+    val allowedChars = ('a'..'z')
     return (1..length).map { allowedChars.random() }.joinToString("")
 }
 
@@ -56,5 +56,14 @@ fun problem649(word: String): Int {
 }
 
 fun problem650(length: Int, word1: String, word2: String): Int {
-
+    println(word1)
+    println(word2)
+    var result = 0
+    for (c1 in word1) {
+        for (c2 in word2) {
+            if (c1 == c2)
+                result++
+        }
+    }
+    return result
 }
